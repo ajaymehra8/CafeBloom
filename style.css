@@ -1,0 +1,786 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  scroll-behavior: smooth;
+  overflow-x:hidden;
+    font-family:'Poppins', sans-serif;
+
+
+}
+/************* navbar ***************/
+nav{
+  position:fixed;
+  z-index: 2;
+  width: 100%;
+  display:flex;
+  background-color: black;
+  padding-top: 15px;
+  padding-bottom: 3px;
+  font-weight: bold;
+}
+.brandName span{
+  color: #f8cfa2;
+}
+.brandName{
+  color: white;
+  font-size: 2rem;
+  margin-left: 5rem;
+  margin-bottom: 10px;
+}
+.navItems{
+  display:flex;
+  gap:3vw;
+  list-style:none;
+  position:absolute;
+  right:6vw;
+  margin-top: 12px;
+  z-index:1;
+}
+.navItems li{
+  position: relative;
+}
+.navItems li a{
+  text-decoration:none;
+  color: white;
+  
+}
+.navItems li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #000;
+  transition: width 0.5s ease;
+}
+.navItems li a:hover{
+  color: #f8cfa2;
+}
+.navItems li:hover a::after {
+  width: 100%;
+  background-color: #f8cfa2;
+  
+}
+
+/* toggler */
+#toggle{
+  display: none;
+}
+.toggler{
+  color: white;
+  position:absolute;
+  font-size: 20px;
+  top:25px;
+  right:10vw;
+}
+@media(max-width:800px){
+  #toggle{
+  display: inherit;
+}
+  .navItems{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  background: white;
+  list-style:none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  margin-top: 49px;
+  right:100%;
+    transition: all .5s ease;
+}
+  .navItemsA{
+    right:0;
+  }
+  .navItems li {
+    margin-top: 10px;
+    font-weight:bold;
+  }
+  .navItems li a{
+  text-decoration:none;
+  color: black;
+}
+}
+
+/*################# SECTION 1 ###################*/
+.sectionFirst{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height:100vh;
+  background-image: url("https://images.unsplash.com/photo-1453614512568-c4024d13c247?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29mZmVlJTIwc2hvcHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
+  background-repeat:no-repeat;
+  background-size:cover;
+    background-position:center;
+
+    background-attachment:fixed;
+  overflow:auto;
+  
+}
+.shadowOverlay {
+  position:absolute;
+  bottom: 0;
+  left: 0;
+width:100vw;
+  height:100vh;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%); 
+}
+
+
+.firstContent{
+  z-index: 1;
+
+  display:grid;
+  place-items:center;
+  margin-top:150px;
+}
+.head{
+  color: white;
+ 
+  font-size: 5vw;
+  font-weight: 900;
+
+}
+.head span{
+  color: red;
+}
+.firstPara{
+  color: white;
+  line-height:1.7;
+  text-align:center;
+  width: 60%;
+  margin-top: 20px;
+}
+.More{
+
+  padding:10px;
+  font-size: 15px;
+  margin-top: 20px;
+  color:white;
+  border:3px solid white;
+  background-color: transparent;
+}
+.More:hover{
+  background-color: white;
+  color: black;
+  cursor:pointer;
+}
+
+/************* SECTION 2 ***********/
+.section2{
+  height: 170vh;
+  width: 100vw;
+  overflow:auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  background-color:  #ebebeb;
+
+ }
+.secondContent{
+  margin-top: 50px;
+}
+.secondContent .dark{
+    color: #d0a268;
+    margin-bottom: 12px;
+
+}
+.secondContent .large{
+font-size: 4.2vw;
+}
+.inputTags{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  
+}
+.firstTag,.secondTag,.thirdTag{
+  display:flex;
+  margin-top: 20px;
+}
+select,.input,.clock-input{
+  border: none;
+  background-color:  #ffffff;
+    height:40px;
+padding-left:10px;
+padding-right:50px
+}
+.inputButton{
+  background-color:#d0a268;
+  color:white;
+  padding:10px;
+  height:40px;
+  margin-left: 20px;
+  margin-top: 20px;
+  font-weight: 900;
+  border: none;
+  padding:0px 30px;
+  transition:.6s;
+}
+.inputButton:hover{
+  cursor:pointer;
+  background-color:black;
+}
+.group{
+  font-size:30px;
+  
+  background-color: #fff;
+   padding:5px;
+  margin-left:3px;
+  
+   color: #d0a268;
+
+}
+
+.inputTags h3{
+  font-size: 25px;
+  margin:0 35px;
+  margin-top: 20px;
+  font-weight: 900;
+}
+
+/*##################### CARD CONTAINER #########################*/
+.cardContainer{
+  display:flex;
+   flex-wrap: wrap;
+  justify-content: center;
+  gap:70px;
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+.card{
+  text-align: left;
+}
+.card .card-img{
+  width:25vw;
+}
+.cardContent{
+  text-align: left;
+}
+.cardContent h2{
+  font-size: 2vw;
+  margin-top: 10px;
+}
+.cardContent h2 span{
+  color:#d0a268;
+  font-size: 6vw;
+  margin-left: 5px;
+}
+.cardContent p{
+  width: 15vw;
+  font-size: 15px;
+  font-weight:200;
+  margin:14px 0;
+}
+.card input{
+  border: none;
+  color:#d0a268;
+}
+
+/*################## SECTION 3 ###############*/
+.sectionThird{
+ width: 100vw;
+  height: 100vh;
+  background-image: url("https://st2.depositphotos.com/6672578/10276/i/450/depositphotos_102767206-stock-photo-modern-coffee-shop-with-customers.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/*################## SECTION 4 ###############*/
+.cardContainer2{
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  justify-content: center;
+  text-align: center;
+  margin-top: 50px;
+  
+}
+
+.cardContent2 p{
+  width:200px;
+  font-size: 14px;
+  font-weight: 100;
+}
+.cardContent2 h3{
+  margin: 10px 0;
+}
+
+/* Poster */
+.poster{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  margin-top: 100px;
+  
+  margin-bottom: 30px;
+}
+.posterImg img{
+  height: 58vh;
+  max-width:40vw;
+  min-width:340px;
+  
+}
+.posterContent{
+  background-color: #d0a268;
+  padding: 40px 20px 0;
+  color: white;
+    height: 50vh;
+     max-width:40vw;
+  min-width: 300px;
+}
+.poster input{
+  border: none;
+  background: none;
+  color: white;
+  margin-top: 30px;
+}
+
+/*############# SECTION 5 ##############*/
+
+.section5{
+   position: relative;
+  
+  background-image: url("https://images.ctfassets.net/yixw23k2v6vo/2DzylazgZaKWOAqWQyWaG8/1fea5c0848599ec268a16b5b15af83cb/iS-5_Ways_to_Enjoy_a_Coffee_Bar_When_You_Have_Acid_Reflux-iStock-611179078.jpg");
+  height:250vh;
+width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.shade {
+   display:flex;
+  flex-direction: column;
+ align-items:center;
+ color: white;
+  overflow:auto;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Change the color and opacity as needed */
+}
+.section5 .shade h2{
+  margin-top: 50px;
+  color:#d0a268 ;
+}
+.section5 .shade h3{
+  background-color:#d0a268 ;
+  padding: 8px 40px;
+  font-size: 3vw;
+  margin-top: 25px;
+;
+}
+/* MENUBAR */
+.menuItems,.menuItems2{
+  margin-top: 70px;
+  display:flex;
+  flex-wrap:wrap;
+  gap: 50px;
+  justify-content: center;
+  
+}
+.menuItems2{
+  margin-top: 50px;
+}
+.menuItems img,.menuItems2 img{
+  width:85px;
+}
+.firstMenu{
+  display:flex;
+  gap:25px;
+  
+}
+.menuContent{
+  display: flex;
+}
+.line{
+  height:1px;
+  width:140px;
+  margin-top: 18px;
+  background-color: white;
+}
+.menuPara p{
+  margin-top: 7px;
+  font-size: 13px;
+  color: #d0a268;
+  display: flex;
+}
+.Menubtn{
+  padding: 10px 20px;
+  margin-top: 60px;
+  background-color:  #d0a268;
+  color: white;
+  font-weight: 900;
+  transition:.6s;
+  border: none;
+  margin-bottom: 50px;
+}
+.Menubtn:hover{
+  cursor: pointer;
+  background-color: #fff;
+  color: black;
+}
+
+/*################## SECTION 6 ################*/
+
+.section6{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+}
+.content6{
+  margin-top: 30px;
+  text-align: center;
+}
+.content6 h2{
+  color: #d0a268;
+  font-weight: 700;
+  
+}
+.content6 h3{
+  font-size: 4.5vw;
+  margin-top: 10px;
+}
+
+/*############### CARD CONTAINER 6 ##########*/
+
+.cardContainer6{
+  margin: 60px 0;
+  display:flex;
+  justify-content: center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+.card6 img{
+  width: 200px;
+}
+.star-icon{
+color: #d0a268;
+font-size: 10px;
+  margin: 10px 0;
+}
+
+.cardImg{
+  position:relative;
+  overflow:hidden;
+  width: 200px;
+  height:200px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.cartBtn{
+  position:absolute;
+  bottom:-50px;
+   width: 200px;
+  height:50px;
+  background-color: #d0a268 ;
+  color: white;
+  font-weight: 900;
+  border: none;
+  transition:.3s;
+  
+}
+.cardImg:hover{
+  cursor: pointer;
+}
+.cardImg:hover .cartBtn{
+   bottom: 0;
+}
+.contentCard6 h3{
+  margin-top: 10px;
+}
+.cart-icon{
+  margin-right: 5px;
+}
+.cardImg1{
+   background-image: url("https://mohitmahara.github.io/CafeBloom/assets/product-image-1-500x500.jpg");
+}
+.cardImg2{
+  background-image: url("https://mohitmahara.github.io/CafeBloom/assets/product-image-2-500x500.jpg");
+}
+.cardImg3{
+  background-image: url("https://mohitmahara.github.io/CafeBloom/assets/product-image-3-500x500.jpg");
+}
+.cardImg4{
+  background-image: url("https://mohitmahara.github.io/CafeBloom/assets/product-image-4-500x500.jpg");
+ 
+}
+
+/*####################### GRID PHOTOS ###################*/
+.photos{
+  display: grid;
+   grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 100px;
+  
+}
+.photos img {
+  width: 100%;
+  height: 20vw;
+}
+
+/*############# FOOTER #######*/
+
+footer{
+  position: relative;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmRkS8f-y12_Wy9hzmznjiF8NmsdeJ4fIFyAJGktFKFXBUWc6V3OTDuY5qOgOYlGZtmRA&usqp=CAU");
+  
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.shade2{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 90px;
+  justify-content: center;
+  color: white;
+   top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .7);
+ 
+  width: 100vw;
+}
+.days{
+text-align:right;
+}
+.days h5{
+  font-weight: 100;
+  letter-spacing:1px;
+  font-size: 15px;
+ 
+}
+
+
+.closed{
+  color: #d0a268;
+    flex-grow:1;
+
+}
+
+.openingHours h3{
+  margin: 50px 0 40px;
+}
+.line2{
+  background-color: white;
+  height: 1px;
+  width: 60px;
+  margin: 0 1px 0 7px;
+  margin-top: 16px;
+  flex-grow:.1;
+ 
+}
+.day1{
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  justify-content: left;
+  
+}
+
+.day1 p{
+  margin: 0;
+  font-size: 14px;
+  flex-grow:1;
+  letter-spacing:1px;
+
+}
+.contact,.location{
+  margin-top: 50px;
+}
+.shade2{
+    padding-bottom: 50px;
+
+}
+.contact h3,.location h3{
+  margin-bottom: 30px;
+}
+.contact h5{
+  color:#d0a268;
+  margin-bottom: 20px;
+}
+.contact p{
+  margin-bottom: 5px;
+  font-weight: 100;
+  font-size: 14px;
+}
+.location h5{
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* SECONDARY FOOTER */
+/* Example CSS */
+.secondary-footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+  gap: 20vw;
+  background-color: black;
+  padding:8px 0;
+}
+.secondary-footer h5{
+  color: grey;
+  font-weight: 100;
+}
+.secondary-footer a{
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 10px;
+  transition:.5s;
+  position: relative;
+}
+.secondary-footer a:hover{
+  color:#FFCC99;
+  top:-2px;
+}
+
+/* RESPONSIVE FOR MOBILES AND TABS */
+
+@media(max-width:800px){
+  .brandName{
+    font-size: 1.5rem;
+    margin-top: 7px;
+    margin-left: 30px;
+  }
+  .navItems li a{
+  font-weight: 900;
+  }
+  .head{
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .firstPara{
+    width:85vw;
+    font-size: 12px;
+  }
+  .More{
+    font-size: 14px;
+    padding: 5px 3px;
+    margin-bottom: 50px;
+  }
+  .card .card-img{
+  width:13rem;
+}
+  .cardContent h2 span{
+    font-size: 3.2rem;
+  }
+  .cardContent h2{
+    font-size: 1.2rem;
+  }
+  .cardContent p{
+    width: 200px;
+  }
+  .posterImg img{
+    min-width: 250px;
+  }
+  .posterContent{
+    min-width: 210px;
+  }
+  
+  .posterContent h1{
+    font-size: 22px;
+    margin-bottom: 10px;
+    
+  }
+  .posterContent p{
+    width: 100%;
+    font-size: 14px;
+    
+  }
+  .menuContent h4{
+    font-size: 15px;
+  }
+  .menuContent line{
+    width: ;
+  }
+  .shade2{
+    gap:20px;
+  }
+   .secondary-footer{
+    gap:5vw;
+  }
+}
+@media(max-width:500px){
+  .posterImg img{
+    min-width: 250px;
+    height: 250px;
+  }
+  .posterContent{
+    min-width: 210px;
+    height: 210px;
+  }
+  .section2 .dark{
+    font-size: 20px;
+  }
+  .section2 .large{
+    font-size: 25px;
+  }
+  .section2 h3{
+    font-size: 20px;
+  }
+  .input,.clock-input{
+    width: 90px;
+  }
+  .group{
+    width: 30px;
+    font-size: 25px;
+  }
+  .inputButtton{
+    margin-top: 40px;
+  }
+  .line{
+    width: 50px;
+  }
+  .firstMenu{
+    gap:5px;
+  }
+  .firstMenu img{
+    width: 60px;
+    
+  }
+  .section5 .shade h3{
+    padding: 8px 2px;
+    font-size: 20px;
+  }
+  .menuContent h4{
+    font-size: 15px;
+  }
+  .menuPara p{
+    font-size: 10px;
+  }
+  .secondary-footer{
+    gap:5vw;
+  }
+  .secondary-footer a{
+    margin-left: 1px;
+  }
+  .line2{
+    width: 40px;
+  }
+  .day1 h5{
+    font-size: 10px;
+  }
+  .day1 p{
+    font-size: 10px;
+  }
+  
+}
