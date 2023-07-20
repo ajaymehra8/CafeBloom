@@ -8,3 +8,18 @@ if(buttonClicked){
  menuBar.classList.remove("navItemsA");
   buttonClicked=true;
 } });
+ // FOR SCROLLIN
+ document.addEventListener('DOMContentLoaded', function() {
+      const anchors = document.querySelectorAll('a');
+   for(anchor of anchors){
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const targetID = this.getAttribute('href');
+        const targetElement = document.querySelector(targetID);
+        
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      });}
+    });
